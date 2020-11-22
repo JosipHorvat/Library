@@ -87,4 +87,8 @@ public class Utils {
         }
         return null;
     }
+
+    public boolean addToAlreadyRead(Book book){
+        return alreadyReadBook.add(book);
+    }
 }
