@@ -20,6 +20,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import static com.horvat.library.BookActivity.BOOK_ID_KEY;
+
 //5. After creating nested class we can extend it this way:(ViewHolder from our package!!
 public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.ViewHolder> {
     //13. logdt shortcut
@@ -60,6 +62,8 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext,BookActivity.class);
+                intent.putExtra(BOOK_ID_KEY, books.get(position).getId());
+
                 mContext.startActivity(intent);
             }
         });
