@@ -47,6 +47,9 @@ public class BookActivity extends AppCompatActivity {
              setData(incomingBook);
 
              handleAlreadyRead(incomingBook);
+            // handleWantToReadBooks(incomingBook);
+           //  handleCurrentlyReadingBook(incomingBook);
+         //    handleFavoriteBooks(incomingBook);
                 }
             }
         }
@@ -57,7 +60,7 @@ public class BookActivity extends AppCompatActivity {
      * Add book to Already read Book ArrayList
      * @param book
      */
-    private void handleAlreadyRead(Book book){
+    private void handleAlreadyRead( final Book book){
         ArrayList<Book> alreadyReadBooks = Utils.getInstance().getAlreadyReadBook();
 
         boolean existInAlreadyReadBooks = false;
@@ -74,6 +77,10 @@ public class BookActivity extends AppCompatActivity {
                 public void onClick(View v) {
             if(Utils.getInstance().addToAlreadyRead(book)){
                 Toast.makeText(BookActivity.this, "Book Added", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(BookActivity.this, AlreadyReadBookActivity.class);
+                startActivity(intent);
+
             }else{
                 Toast.makeText(BookActivity.this, "Something wrong happend, please try again", Toast.LENGTH_SHORT).show();
             }
