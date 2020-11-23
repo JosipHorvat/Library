@@ -7,22 +7,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class AlreadyReadBookActivity extends AppCompatActivity {
-
+public class FavoriteBooksActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_already_read_book);
+        setContentView(R.layout.activity_favorite_books);
 
-        RecyclerView recyclerView = findViewById(R.id.BookRecViewCurrentlyReading);
+        RecyclerView recyclerView = findViewById(R.id.bookRecView);
         BookRecViewAdapter adapter = new BookRecViewAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter.setBooks(Utils.getAlreadyReadBook());
+        adapter.setBooks(Utils.getFavoriteBooks());
     }
-
     //CTRL O
     @Override
     public void onBackPressed() {

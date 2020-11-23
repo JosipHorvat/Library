@@ -92,7 +92,7 @@ public class Utils {
         return alreadyReadBook.add(book);
     }
 
-    public boolean addWantToReadBook(Book book){
+    public boolean addToWantToReadBook(Book book){
         return wantToReadBooks.add(book);
     }
 
