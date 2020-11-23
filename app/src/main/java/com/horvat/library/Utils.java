@@ -103,4 +103,17 @@ public class Utils {
     public boolean addToFavorite(Book book){
         return favoriteBooks.add(book);
     }
+
+    public boolean removeFromAlreadyRead(Book book){
+        return alreadyReadBook.remove(book);
+    }
+    public boolean removeFromWantToRead(Book book){
+        return wantToReadBooks.remove(book);
+    }
+    public boolean removeFromCurrentlyReading(Book book){
+        return currentlyReadingBooks.remove(book);
+    }
+    public boolean removeFromFavorites(Book book){
+        return favoriteBooks.remove(book);
+    }
 }
